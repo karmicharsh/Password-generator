@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css\styles.css">
+  <title>Password Generator</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Password Generator</h1>
+    <label for="letters">Number of letters:</label>
+    <input type="number" id="letters" min="0">
+    <label for="symbols">Number of symbols:</label>
+    <input type="number" id="symbols" min="0">
+    <label for="numbers">Number of numbers:</label>
+    <input type="number" id="numbers" min="0">
+    <label for="difficulty">Choose difficulty:</label>
+    <select id="difficulty">
+      <option value="easy">Easy</option>
+      <option value="hard">Hard</option>
+    </select>
+    <button id="generate">Generate Password</button>
+    <div id="password-result"></div>
+  </div>
+  <script>
+    const letters = ['a', 'b', 'c', /* ... */, 'Z'];
+    const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+    const symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+'];
+
+    document.getElementById('generate').addEventListener('click', generatePassword);
+
+    function generatePassword() {
+      const nrLetters = parseInt(document.getElementById('letters').value);
+      const nrSymbols = parseInt(document.getElementById('symbols').value);
+      const nrNumbers = parseInt(document.getElementById('numbers').value);
+      const difficulty = document.getElementById('difficulty').value;
+
+      const ques = difficulty.toLowerCase();
+      let password = "";
+
+      if (ques === "easy") {
+
+        for (let i = 0; i < nrLetters; i++) {
+          const randomChar = letters[Math.floor(Math.random() * letters.length)];
+          password += randomChar;
+        }
+
+        for (let i = 0; i < nrSymbols; i++) {
+          const randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
+          password += randomSymbol;
+        }
+
+        for (let i = 0; i < nrNumbers; i++) {
+          const randomNum = numbers[Math.floor(Math.random() * numbers.length)];
+          password += randomNum;
+        }
+      } else {
+        let harderPassword = "";
+        const totalCharacters = nrLetters + nrNumbers + nrSymbols;
+        const charLists = [letters, numbers, symbols];
+
+        for (let i = 0; i < totalCharacters; i++) {
+          const randomList = charLists[Math.floor(Math.random() * charLists.length)];
+          const randomChar = randomList[Math.floor(Math.random() * randomList.length)];
+          harderPassword += randomChar;
+        }
+
+        password = harderPassword;
+      }
+
+      const passwordResult = document.getElementById('password-result');
+      passwordResult.textContent = `The password that I would suggest is: ${password}`;
+    }
+  </script>
+</body>
+</html>

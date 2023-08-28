@@ -1,0 +1,136 @@
+html, body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    min-height: 100%;
+    background-color: #2d3436;
+    background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    background-color: rgb(253, 253, 252);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+    color: #f7be04;
+  }
+  
+  label, input, select {
+    display: block;
+    margin-bottom: 10px;
+    color: #f7be04;
+  }
+  
+  input, select {
+    width: 70%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #000;
+    border: 0;
+    color: #f7be04;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 15px;
+    font-family: fantasy;
+    transition: opacity 0.2s;
+  }
+  
+  button:hover {
+    opacity: 0.7;
+  }
+  
+  #password-result {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #f7be04;
+  }
+  
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: 10% auto;
+    border-radius: 15px;
+    font-family: fantasy;
+    background-color: #2d3436;
+    padding-bottom: 1%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .slider_main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+  }
+  
+  .slider {
+    -webkit-appearance: none;
+    width: 70%;
+    height: 10px;
+    background: #f7be04;
+    border-radius: 15px;
+    opacity: 1;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    margin-left: 10px;
+  }
+  
+  .slider:hover {
+    opacity: 0.7;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #000;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .wrapper_main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+  }
+  
+  .clipboard {
+    margin-left: auto;
+    cursor: pointer;
+    border: 0;
+    background-color: #f7be04;
+    color: #000;
+    border-radius: 15px;
+    font-size: 23px;
+    padding: 10px;
+    transition: opacity .2s;
+  }
+  
+  .clipboard:hover {
+    opacity: 0.7;
+  }
+  
